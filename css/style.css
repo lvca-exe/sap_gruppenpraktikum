@@ -677,3 +677,258 @@ body {
     margin-top: 30px;
     text-align: center;
 }
+
+/* Settings Modal Overlay */
+.settings-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+.settings-overlay.active {
+    display: block;
+}
+
+/* Settings Modal */
+.settings-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 40px;
+    min-width: 400px;
+    max-width: 500px;
+    width: 90%;
+    z-index: 1001;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translate(-50%, -60%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+}
+
+/* Settings Title */
+.settings-title {
+    color: white;
+    font-size: 24px;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Dark Mode Toggle Section */
+.dark-mode-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode-label {
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.dark-mode-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.toggle-labels {
+    display: flex;
+    gap: 10px;
+    color: white;
+    font-size: 14px;
+}
+
+.toggle-switch {
+    position: relative;
+    width: 60px;
+    height: 30px;
+    background-color: #4CAF50;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.toggle-switch.white-mode {
+    background-color: #f0f0f0;
+}
+
+.toggle-slider {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.toggle-switch.white-mode .toggle-slider {
+    transform: translateX(30px);
+}
+
+/* Settings Buttons */
+.settings-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.settings-btn-item {
+    padding: 15px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: left;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+}
+
+.settings-btn-support {
+    background-color: white;
+    color: black;
+}
+
+.settings-btn-support:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+.settings-btn-logout {
+    background-color: #f44336;
+    color: white;
+}
+
+.settings-btn-logout:hover {
+    background-color: #d32f2f;
+    transform: translateY(-2px);
+}
+
+.settings-btn-cancel {
+    background-color: #666;
+    color: white;
+}
+
+.settings-btn-cancel:hover {
+    background-color: #777;
+    transform: translateY(-2px);
+}
+
+/* Button Hover Effects */
+.settings-btn-item:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.settings-btn-item:hover:before {
+    left: 100%;
+}
+
+/* White Mode Styles */
+body.white-mode {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+body.white-mode .desktop-container {
+    background-color: #f0f0f0;
+}
+
+body.white-mode .settings-modal {
+    background-color: white;
+    color: #000;
+}
+
+body.white-mode .settings-title {
+    color: #000;
+}
+
+body.white-mode .dark-mode-label {
+    color: #000;
+}
+
+body.white-mode .toggle-labels {
+    color: #000;
+}
+
+body.white-mode .profit-section,
+body.white-mode .nav-section,
+body.white-mode .secondary-section,
+body.white-mode .additional-section,
+body.white-mode .chart-container {
+    background-color: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.white-mode .profit-label,
+body.white-mode .profit-amount,
+body.white-mode .welcome-text,
+body.white-mode .page-title {
+    color: #000;
+}
+
+body.white-mode .nav-btn,
+body.white-mode .secondary-btn,
+body.white-mode .additional-btn,
+body.white-mode .period-btn,
+body.white-mode .back-btn {
+    background-color: #e0e0e0;
+    color: #000;
+}
+
+body.white-mode .nav-btn.active,
+body.white-mode .secondary-btn.active,
+body.white-mode .additional-btn.active,
+body.white-mode .period-btn.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Responsive Design für Settings Modal */
+@media (max-width: 600px) {
+    .settings-modal {
+        min-width: auto;
+        width: 95%;
+        padding: 30px 20px;
+    }
+    
+    .dark-mode-section {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
