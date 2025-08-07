@@ -931,3 +931,141 @@ body.white-mode .period-btn.active {
         gap: 15px;
         text-align: center;
     }
+
+    /* Login Header korrigieren */
+.login-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.login-header h1 {
+    color: white;
+    font-size: 24px;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* Settings Button in Login Header */
+.login-header .settings-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.login-header .settings-btn:hover {
+    background-color: #333;
+    transform: rotate(90deg);
+}
+
+/* Buttons Container für Login */
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn-confirm {
+    width: 100%;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn-confirm:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+}
+
+/* Overview Section */
+.overview-section {
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.02);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 30px;
+}
+
+.overview-label {
+    font-size: 48px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    color: white;
+}
+
+/* White Mode für Overview */
+body.white-mode .overview-section {
+    background-color: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.white-mode .overview-label {
+    color: #000;
+}
+
+/* Responsive Design für Overview */
+@media (max-width: 1400px) {
+    .overview-label {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 900px) {
+    .overview-label {
+        font-size: 32px;
+    }
+}
+
+/* Tools Section */
+.tools-section {
+    padding: 20px 30px 10px 30px;
+    background-color: rgba(255, 255, 255, 0.02);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 10px;
+}
+
+.tools-label {
+    font-size: 24px;
+    font-weight: 300;
+    margin: 0;
+    color: white;
+    text-align: center;
+}
+
+/* White Mode für Tools */
+body.white-mode .tools-section {
+    background-color: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.white-mode .tools-label {
+    color: #000;
+}
+
+/* Responsive Design für Tools */
+@media (max-width: 1400px) {
+    .tools-label {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 900px) {
+    .tools-label {
+        font-size: 20px;
+    }
+}
