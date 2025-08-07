@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Über uns</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style> 
+        body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000000;
+}
+
+.page-title {
+  font-size: 24px;
+  padding: 20px;
+  color: #a366e1;
+  font-weight: bold;
+}
+
+.icon {
+  margin-right: 8px;
+}
+
+/* Schwarzer Dashboard-Container */
+.dashboard-container {
+  background-color: black;
+  color: white;
+  width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+/* Zahnrad */
+.settings-icon {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Umschalt-Buttons */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.buttons button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #333;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.buttons .active {
+  background-color: white;
+  color: black;
+}
+
+.buttons button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+/* Diagramm */
+.chart {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 200px;
+  margin-bottom: 20px;
+  border-top: 1px solid #444;
+  border-bottom: 1px solid #444;
+  padding: 20px 0;
+}
+
+.bar-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60px;
+}
+
+.bar {
+  width: 20px;
+  margin: 3px 0;
+  border-radius: 4px;
+}
+
+.income {
+  background-color: green;
+}
+
+.expense {
+  background-color: red;
+}
+
+/* Detaillierte Auflistung Button */
+.details-button {
+  padding: 8px 14px;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+    </style>
+</head>
+<body>
+ <div>
+    <h1> Einnahmen und Ausgaben Monat </h1> 
+  </div>
+
+  <div class="dashboard-container">
+    <div class="settings-icon">⚙️</div>
+    <h1>Einnahmen und Ausgaben</h1>
+
+    <div class="buttons">
+      <button disabled >Monat</button>
+      <button class="active">Quartal</button>
+      <button disabled>Jahr</button>
+    </div>
+
+    <div class="chart">
+      <div class="bar-group">
+        <div class="bar income" style="height: 70%;"></div>
+        <div class="bar expense" style="height: 30%;"></div>
+        <p>Monat 1</p>
+      </div>
+      <div class="bar-group">
+        <div class="bar income" style="height: 70%;"></div>
+        <div class="bar expense" style="height: 30%;"></div>
+        <p>Monat 2</p>
+      </div>
+      <div class="bar-group">
+        <div class="bar income" style="height: 60%;"></div>
+        <div class="bar expense" style="height: 20%;"></div>
+        <p>Monat 3</p>
+      </div>
+      </div>
+
+   
+  </div>
+</body>
