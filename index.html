@@ -3,31 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meine Website</title>
-    <meta name="description" content="Dies ist eine einfache Startseite.">
+    <title>Finanzapp - Dashboard</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Willkommen auf meiner Website</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Start</a></li>
-                <li><a href="pages/about.html">Über mich</a></li>
-                <li><a href="#">Kontakt</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="desktop-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="user-info">
+                <div class="avatar"></div>
+                <span class="welcome-text">Willkommen Max</span>
+            </div>
+            <button class="settings-btn">⚙️</button>
+        </div>
 
-    <main>
-        <section>
-            <h2>Über diese Seite</h2>
-            <p>Hier kommt dein Inhalt hin. Du kannst Texte, Bilder oder andere Elemente einfügen.</p>
-        </section>
-    </main>
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Left Panel - Profit Section -->
+            <div class="left-panel">
+                <div class="profit-section">
+                    <h2 class="profit-label">Gewinn</h2>
+                    <div class="profit-amount">131.567,86€</div>
+                    <div class="profit-change">
+                        <span class="profit-percentage">▲ 9,7% Einnahmen</span>
+                    </div>
+                </div>
+            </div>
 
-    <footer>
-        <p>&copy; 2025 - Alle Rechte vorbehalten.</p>
-    </footer>
+            <!-- Right Panel - All Navigation -->
+            <div class="right-panel">
+                <!-- Primary Navigation -->
+                <div class="nav-section">
+                    <div class="nav-buttons">
+                        <button class="nav-btn active">Einnahmen und Ausgaben</button>
+                        <button class="nav-btn">Dashboard</button>
+                        <button class="nav-btn">Prognose</button>
+                    </div>
+                </div>
+
+                <!-- Secondary Navigation -->
+                <div class="secondary-section">
+                    <div class="secondary-nav">
+                        <button class="secondary-btn">Aufteilung von Einnahmen</button>
+                        <button class="secondary-btn">Aufteilung von Ausgaben</button>
+                    </div>
+                </div>
+
+                <!-- All Additional Navigation Together -->
+                <div class="additional-section">
+                    <div class="additional-nav">
+                        <button class="additional-btn">Eingaben</button>
+                        <button class="additional-btn">Änderungsprotokoll</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
