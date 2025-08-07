@@ -454,3 +454,223 @@ body {
         font-size: 20px;
     }
 }
+
+/* Prognose Page Styles */
+.prognose-stats {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background-color: rgba(255, 255, 255, 0.02);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    text-align: center;
+    min-width: 300px;
+}
+
+.stat-amount {
+    font-size: 36px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.stat-change {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 8px 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.stat-change.positive {
+    color: #4CAF50;
+}
+
+.stat-change.negative {
+    color: #f44336;
+}
+
+.stat-arrow {
+    font-size: 14px;
+}
+
+.stat-percentage {
+    font-size: 16px;
+}
+
+/* Prognose Legend */
+.legend-color.prognose {
+    background: linear-gradient(45deg, #4CAF50, #f44336);
+}
+
+/* Responsive Design für Prognose */
+@media (max-width: 1200px) {
+    .stat-card {
+        min-width: 250px;
+    }
+    
+    .stat-amount {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 600px) {
+    .stat-card {
+        min-width: auto;
+        width: 100%;
+        margin: 0 20px;
+    }
+    
+    .stat-amount {
+        font-size: 24px;
+    }
+    
+    .stat-change {
+        font-size: 14px;
+    }
+}
+
+/* Back Button korrigieren */
+.back-btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.back-btn:hover {
+    background-color: #444;
+    transform: translateY(-2px);
+}
+
+.back-btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.back-btn:hover:before {
+    left: 100%;
+}
+
+/* Chart Legend verbessern */
+.chart-legend {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.02);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    transition: all 0.3s;
+}
+
+.legend-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.legend-color.income {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+}
+
+.legend-color.expenses {
+    background-color: #f44336;
+    border-color: #f44336;
+}
+
+.legend-color.prognose {
+    background: linear-gradient(45deg, #FF9800, #FFC107);
+    border-color: #FF9800;
+    position: relative;
+}
+
+/* Gestrichelter Effekt für Prognose Legend */
+.legend-color.prognose:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: white;
+    transform: translateY(-50%);
+    background-image: repeating-linear-gradient(
+        to right,
+        white 0,
+        white 3px,
+        transparent 3px,
+        transparent 6px
+    );
+}
+
+/* Bessere Responsive Design für Legend */
+@media (max-width: 768px) {
+    .chart-legend {
+        gap: 15px;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .legend-item {
+        font-size: 14px;
+        justify-content: center;
+        min-width: 150px;
+    }
+    
+    .legend-color {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* Focus-Styles für Back Button */
+.back-btn:focus {
+    outline: 2px solid #4CAF50;
+    outline-offset: 2px;
+}
+
+/* Zusätzliche Hover-Effekte */
+.back-nav {
+    margin-top: 30px;
+    text-align: center;
+}

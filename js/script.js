@@ -62,6 +62,12 @@ document.querySelectorAll('.additional-btn').forEach(btn => {
     });
 });
 
+// Navigation zur Prognose Seite
+function showPrognose() {
+    window.location.href = 'pages/prognose.html';
+}
+
+
 // Settings Button Handler
 document.querySelector('.settings-btn').addEventListener('click', function() {
     console.log('Settings clicked');

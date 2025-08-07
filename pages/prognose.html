@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finanzapp - Prognose</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="desktop-container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="page-title">Prognose</h1>
+            <button class="settings-btn">⚙️</button>
+        </div>
+
+        <!-- Prognose Stats -->
+        <div class="prognose-stats">
+            <div class="stat-card">
+                <div class="stat-amount">123.456,78 €</div>
+                <div class="stat-change positive">
+                    <span class="stat-arrow">▲</span>
+                    <span class="stat-percentage">9,7% Einnahmen</span>
+                </div>
+                <div class="stat-change negative">
+                    <span class="stat-arrow">▼</span>
+                    <span class="stat-percentage">5% Ausgaben</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chart Container -->
+        <div class="chart-container">
+            <div class="chart-wrapper">
+                <canvas id="prognoseChart"></canvas>
+            </div>
+            <div class="chart-legend">
+                <div class="legend-item">
+                    <span class="legend-color income"></span>
+                    <span>Einnahmen</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color expenses"></span>
+                    <span>Ausgaben</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color prognose"></span>
+                    <span>Prognose</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation zurück -->
+        <div class="back-nav">
+            <button class="back-btn" onclick="window.location.href='../index.html'">← Zurück zum Dashboard</button>
+        </div>
+    </div>
+
+    <script src="../js/prognose.js"></script>
+</body>
+</html>
