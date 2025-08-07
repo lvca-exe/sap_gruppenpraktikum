@@ -36,6 +36,18 @@ body {
     gap: 20px;
 }
 
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+}
+
+.logo {
+    max-width: 140px;
+    max-height: 140px;
+}
+
 .avatar {
     width: 60px;
     height: 60px;
