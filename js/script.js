@@ -63,6 +63,7 @@ document.querySelectorAll('.additional-btn').forEach(btn => {
 });
 
 // Navigation Funktionen
+
 function showEinnahmenAusgabenIndex() {
     window.location.href = 'pages/einnahmen&ausgabenMonat.html';
 }

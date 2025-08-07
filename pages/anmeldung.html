@@ -11,12 +11,12 @@
         <div class="login-container">
             <div class="login-header">
                 <h1>Anmeldung</h1>
-                <div class="settings-icon">⚙️</div>
+                <button class="settings-btn">⚙️</button>
             </div>
             
             <div class="user-icon">👤</div>
 
-            <form id="loginForm" onsubmit="handleLogin(event)">
+            <form id="loginForm">
                 <div class="input-group">
                     <label for="usernumber">Nutzernummer</label>
                     <input type="text" id="usernumber" name="usernumber" required />
@@ -31,26 +31,154 @@
 
                 <div class="buttons">
                     <button type="submit" class="btn-confirm">Bestätigen</button>
-                    <button type="button" class="btn-register">Registrieren</button>
                 </div>
             </form>
         </div>
     </div>
 
+    <!-- Settings Modal -->
+    <div class="settings-overlay" id="settingsOverlay">
+        <div class="settings-modal">
+            <h2 class="settings-title">Einstellungen</h2>
+            
+            <div class="dark-mode-section">
+                <span class="dark-mode-label">Dark Mode/White Mode</span>
+                <div class="dark-mode-toggle">
+                    <div class="toggle-labels">
+                        <span>White Mode</span>
+                        <div class="toggle-switch" id="modeToggle">
+                            <div class="toggle-slider"></div>
+                        </div>
+                        <span>Dark Mode</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="settings-buttons">
+                <button class="settings-btn-item settings-btn-support" onclick="showSupport()">Support</button>
+                <button class="settings-btn-item settings-btn-cancel" onclick="closeSettings()">Abbrechen</button>
+            </div>
+        </div>
+    </div>
+
     <script>
+        // Login Handler
         function handleLogin(event) {
             event.preventDefault();
             
             const usernumber = document.getElementById('usernumber').value;
             const password = document.getElementById('password').value;
             
+            console.log('Login attempt:', usernumber, password); // Debug
+            
             if (usernumber && password) {
-                // Weiterleitung zum Dashboard
+                console.log('Redirecting to ../index.html'); // Debug
                 window.location.href = '../index.html';
             } else {
                 alert('Bitte füllen Sie alle Felder aus.');
             }
         }
+
+        // Settings Modal Funktionen
+        let isDarkMode = true;
+
+        function openSettings() {
+            const overlay = document.getElementById('settingsOverlay');
+            if (overlay) {
+                overlay.classList.add('active');
+            }
+        }
+
+        function closeSettings() {
+            const overlay = document.getElementById('settingsOverlay');
+            if (overlay) {
+                overlay.classList.remove('active');
+            }
+        }
+
+        function toggleMode() {
+            const body = document.body;
+            const toggle = document.getElementById('modeToggle');
+            
+            if (isDarkMode) {
+                body.classList.add('white-mode');
+                toggle.classList.add('white-mode');
+                isDarkMode = false;
+                localStorage.setItem('theme', 'white');
+            } else {
+                body.classList.remove('white-mode');
+                toggle.classList.remove('white-mode');
+                isDarkMode = true;
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        function showSupport() {
+            alert('Support-Bereich wird implementiert.\n\nKontaktieren Sie uns unter:\nE-Mail: support@finanzapp.de\nTelefon: +49 123 456 789');
+        }
+
+        // Event Listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded'); // Debug
+            
+            // Login Form Event Listener
+            const loginForm = document.getElementById('loginForm');
+            if (loginForm) {
+                loginForm.addEventListener('submit', handleLogin);
+                console.log('Login form listener added'); // Debug
+            }
+            
+            // Settings Button Click Handler
+            const settingsBtn = document.querySelector('.settings-btn');
+            if (settingsBtn) {
+                settingsBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    console.log('Settings button clicked'); // Debug
+                    
+                    // Rotation Animation
+                    this.style.transform = 'rotate(180deg)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 300);
+                    
+                    openSettings();
+                });
+            }
+            
+            // Toggle Switch
+            const modeToggle = document.getElementById('modeToggle');
+            if (modeToggle) {
+                modeToggle.addEventListener('click', toggleMode);
+            }
+            
+            // Overlay Click
+            const overlay = document.getElementById('settingsOverlay');
+            if (overlay) {
+                overlay.addEventListener('click', function(e) {
+                    if (e.target === overlay) {
+                        closeSettings();
+                    }
+                });
+            }
+            
+            // ESC Key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeSettings();
+                }
+            });
+            
+            // Load saved theme
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'white') {
+                document.body.classList.add('white-mode');
+                const toggle = document.getElementById('modeToggle');
+                if (toggle) {
+                    toggle.classList.add('white-mode');
+                }
+                isDarkMode = false;
+            }
+        });
     </script>
         <!-- Settings Modal -->
     <div class="settings-overlay" id="settingsOverlay">
