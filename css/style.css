@@ -135,8 +135,9 @@ body {
 /* Universelle Button-Styles für alle Button-Typen */
 .nav-btn,
 .secondary-btn,
+/* Additional Navigation - Als aktive dunkle Buttons */
 .additional-btn {
-    background-color: #333;
+    background-color: #555;
     color: white;
     border: none;
     padding: 15px 30px;
@@ -147,6 +148,7 @@ body {
     white-space: nowrap;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
 }
 
 /* Hover-Effekte für alle Buttons */
@@ -295,4 +297,160 @@ body {
 
 .profit-section {
     animation: fadeIn 0.8s ease-out;
+}
+
+/* Login Page Styles */
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+}
+
+.login-container {
+    background-color: #000;
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.login-header h1 {
+    color: white;
+    font-size: 24px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.settings-icon {
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.settings-icon:hover {
+    background-color: #333;
+}
+
+.user-icon {
+    font-size: 80px;
+    margin-bottom: 30px;
+    opacity: 0.7;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    color: white;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.forgot-password {
+    color: #4CAF50;
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 30px;
+    text-align: right;
+    transition: color 0.3s;
+}
+
+.forgot-password:hover {
+    color: #66BB6A;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-confirm,
+.btn-register {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.btn-confirm {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn-confirm:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+}
+
+.btn-register {
+    background-color: #333;
+    color: white;
+}
+
+.btn-register:hover {
+    background-color: #444;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design für Login */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 30px 20px;
+        margin: 20px;
+    }
+    
+    .buttons {
+        flex-direction: column;
+    }
+    
+    .user-icon {
+        font-size: 60px;
+    }
+    
+    .login-header h1 {
+        font-size: 20px;
+    }
 }
