@@ -63,8 +63,20 @@ document.querySelectorAll('.additional-btn').forEach(btn => {
 });
 
 // Navigation Funktionen
-function showEinnahmenAusgaben() {
-    window.location.href = 'pages/einnahmen-ausgaben.html';
+function showEinnahmenAusgabenIndex() {
+    window.location.href = 'pages/einnahmen&ausgabenMonat.html';
+}
+
+function showEinnahmenAusgabenMonat() {
+    window.location.href = 'einnahmen&ausgabenMonat.html';
+}
+
+function showEinnahmenAusgabenQuartal() {
+    window.location.href = 'einnahmen&ausgabenQuartal.html';
+}
+
+function showEinnahmenAusgabenJahr() {
+    window.location.href = 'einnahmen&ausgabenJahr.html';
 }
 
 function showPrognose() {
