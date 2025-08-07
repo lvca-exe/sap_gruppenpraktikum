@@ -1,9 +1,298 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  background-color: powderblue;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #000;
+    color: white;
+    min-height: 100vh;
+    overflow-x: auto;
 }
-h1 {
-  color: blue;
+
+.desktop-container {
+    min-width: 1200px;
+    max-width: 1600px;
+    margin: 0 auto;
+    background-color: #000;
+    min-height: 100vh;
+    padding: 30px;
 }
-p {
-  color: red;
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    padding: 20px 0;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #666;
+}
+
+.welcome-text {
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.settings-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.settings-btn:hover {
+    background-color: #333;
+}
+
+/* Main Content Layout */
+.main-content {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.left-panel {
+    flex: 1;
+    min-width: 400px;
+}
+
+.right-panel {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Profit Section */
+.profit-section {
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.02);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.profit-label {
+    font-size: 48px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.profit-amount {
+    font-size: 42px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.profit-change {
+    display: flex;
+    align-items: center;
+}
+
+.profit-percentage {
+    color: #4CAF50;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* Navigation Sections */
+.nav-section,
+.secondary-section,
+.additional-section {
+    background-color: rgba(255, 255, 255, 0.02);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px;
+}
+
+/* Button Container Layout */
+.nav-buttons,
+.secondary-nav,
+.additional-nav {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Universelle Button-Styles für alle Button-Typen */
+.nav-btn,
+.secondary-btn,
+.additional-btn {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover-Effekte für alle Buttons */
+.nav-btn:hover,
+.secondary-btn:hover,
+.additional-btn:hover {
+    background-color: #444;
+    transform: translateY(-2px);
+}
+
+/* Active State für alle Buttons */
+.nav-btn.active,
+.secondary-btn.active,
+.additional-btn.active {
+    background-color: #555;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Glanz-Effekt für alle Buttons */
+.nav-btn:before,
+.secondary-btn:before,
+.additional-btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.nav-btn:hover:before,
+.secondary-btn:hover:before,
+.additional-btn:hover:before {
+    left: 100%;
+}
+
+/* Click-Animation für alle Buttons */
+.nav-btn:active,
+.secondary-btn:active,
+.additional-btn:active {
+    transform: scale(0.95);
+}
+
+/* Responsive Design für kleinere Desktops */
+@media (max-width: 1400px) {
+    .main-content {
+        gap: 40px;
+    }
+    
+    .left-panel {
+        min-width: 350px;
+    }
+    
+    .profit-label {
+        font-size: 40px;
+    }
+    
+    .profit-amount {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .desktop-container {
+        min-width: 1000px;
+        padding: 20px;
+    }
+    
+    .main-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .left-panel {
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .right-panel {
+        width: 100%;
+    }
+    
+    .nav-buttons,
+    .secondary-nav,
+    .additional-nav {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 900px) {
+    .desktop-container {
+        min-width: auto;
+        padding: 15px;
+    }
+    
+    .welcome-text {
+        font-size: 24px;
+    }
+    
+    .profit-label {
+        font-size: 32px;
+    }
+    
+    .profit-amount {
+        font-size: 28px;
+    }
+    
+    .nav-buttons,
+    .secondary-nav,
+    .additional-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav-btn,
+    .secondary-btn,
+    .additional-btn {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+}
+
+/* Focus-Styles für Barrierefreiheit */
+.nav-btn:focus,
+.secondary-btn:focus,
+.additional-btn:focus,
+.settings-btn:focus {
+    outline: 2px solid #4CAF50;
+    outline-offset: 2px;
+}
+
+/* Animationen für bessere UX */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.nav-section,
+.secondary-section,
+.additional-section {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.profit-section {
+    animation: fadeIn 0.8s ease-out;
 }
