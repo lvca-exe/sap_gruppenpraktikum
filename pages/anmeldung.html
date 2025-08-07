@@ -3,31 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Über uns</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Finanzapp - Anmeldung</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
- <div class="page-title">Anmeldung</div>
+    <div class="login-page">
+        <div class="login-container">
+            <div class="login-header">
+                <h1>Anmeldung</h1>
+                <div class="settings-icon">⚙️</div>
+            </div>
+            
+            <div class="user-icon">👤</div>
 
-  <div class="login-container">
-    <div class="settings-icon">⚙️</div>
-    <h1>Anmeldung</h1>
-    <div class="user-icon">👤</div>
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="input-group">
+                    <label for="usernumber">Nutzernummer</label>
+                    <input type="text" id="usernumber" name="usernumber" required />
+                </div>
 
-    <form>
-      <label for="usernumber">Nutzernummer</label>
-      <input type="text" id="usernumber" name="usernumber" />
+                <div class="input-group">
+                    <label for="password">Passwort</label>
+                    <input type="password" id="password" name="password" required />
+                </div>
 
-      <label for="password">Passwort</label>
-      <input type="password" id="password" name="password" />
+                <a href="#" class="forgot-password">Passwort vergessen?</a>
 
-      <a href="#" class="forgot-password">Passwort vergessen?</a>
+                <div class="buttons">
+                    <button type="submit" class="btn-confirm">Bestätigen</button>
+                    <button type="button" class="btn-register">Registrieren</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
-      <div class="buttons">
-        <button type="submit">Bestätigen</button>
-        <button type="button" class="register">Registrieren</button>
-      </div>
-    </form>
-  </div>
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+            
+            const usernumber = document.getElementById('usernumber').value;
+            const password = document.getElementById('password').value;
+            
+            if (usernumber && password) {
+                // Weiterleitung zum Dashboard
+                window.location.href = '../index.html';
+            } else {
+                alert('Bitte füllen Sie alle Felder aus.');
+            }
+        }
+    </script>
 </body>
 </html>
