@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Über uns</title>
+    <title>Einnahmen und Ausgaben</title>
     <link rel="stylesheet" href="css/style.css">
     <style> 
         body {
@@ -126,8 +126,8 @@
     <h1>Einnahmen und Ausgaben</h1>
 
     <div class="buttons">
-      <button disabled >Monat</button>
-      <button disabled>Quartal</button>
+      <button onclick="showEinnahmenAusgabenMonat()" >Monat</button>
+      <button onclick="showEinnahmenAusgabenQuartal()">Quartal</button>
       <button class="active">Jahr</button>
     </div>
 
@@ -192,9 +192,9 @@
         <div class="bar expense" style="height: 20%;"></div>
         <p>Monat 12</p>
       </div>
-      
     </div>
-
-    
+    <div class="buttons">
+      <button onclick="showIndex()" >Zurück zum Dashboard</button>
   </div>
+  <script src="../js/script.js"></script>
 </body>

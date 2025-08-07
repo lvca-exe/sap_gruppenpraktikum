@@ -180,5 +180,31 @@
             }
         });
     </script>
+        <!-- Settings Modal -->
+    <div class="settings-overlay" id="settingsOverlay">
+        <div class="settings-modal">
+            <h2 class="settings-title">Einstellungen</h2>
+            
+            <div class="dark-mode-section">
+                <span class="dark-mode-label">Dark Mode/White Mode</span>
+                <div class="dark-mode-toggle">
+                    <div class="toggle-labels">
+                        <span>White Mode</span>
+                        <div class="toggle-switch" id="modeToggle">
+                            <div class="toggle-slider"></div>
+                        </div>
+                        <span>Dark Mode</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="settings-buttons">
+                <button class="settings-btn-item settings-btn-support" onclick="showSupport()">Support</button>
+                <button class="settings-btn-item settings-btn-cancel" onclick="closeSettings()">Abbrechen</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/settings.js"></script>
 </body>
 </html>
